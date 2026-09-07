@@ -1,22 +1,13 @@
 export default function Home() {
   return (
     <main className="cover">
-      <header className="masthead">
-        <a className="wordmark" href="#" aria-label="BeijingSauce home">BEIJINGSAUCE</a>
-        <span className="edition">AN INDEPENDENT CITY GUIDE</span>
-      </header>
+      <div className="scene" aria-hidden="true"><img src="/sauce.jpg" alt="" width="1122" height="1402" fetchPriority="high" /></div>
+      <header className="masthead"><span className="location">BEIJING, CHINA</span><span className="edition">AN INDEPENDENT CITY GUIDE</span></header>
       <section className="composition" aria-labelledby="headline">
-        <div className="title">
-          <span className="issue">FOOD & THE HOURS AFTER</span>
-          <h1 id="headline">Beijing.<em>Savor slowly.</em></h1>
-          <div className="signature" aria-hidden="true">Bs.</div>
-        </div>
-        <figure className="photo">
-          <div className="image-window"><img src="/sauce.jpg" alt="Dumplings, chili oil and a cold beer on a late-night Beijing table" width="1122" height="1402" fetchPriority="high" /></div>
-          <figcaption>A CITY, BEST SAVORED.</figcaption>
-        </figure>
+        <h1 id="headline" aria-label="BeijingSauce"><span>Beijing</span><em>Sauce</em></h1>
+        <p className="tagline">The city.<br/><em>Well tasted.</em></p>
       </section>
-      <footer><span className="copyright">© {new Date().getFullYear()} BEIJINGSAUCE</span><span className="launch">COMING SOON</span><span className="location">BEIJING, CHINA</span></footer>
+      <footer><span className="descriptor">FOOD. DRINK. AFTER DARK.</span><span className="launch"><i aria-hidden="true"/>COMING SOON</span></footer>
     </main>
   );
 }
