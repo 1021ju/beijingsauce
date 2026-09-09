@@ -1,25 +1,8 @@
 import Link from 'next/link';
 import type { Article, Bar } from '@/lib/content/types';
-export function ArticleCard({
-  article,
-  index = 0,
-}: {
-  article: Article;
-  index?: number;
-}) {
+export function ArticleCard({ article }: { article: Article }) {
   return (
     <article className="story-card">
-      <Link
-        href={`/blog/${article.slug}`}
-        className={`story-art art-${index % 2}`}
-        aria-label={article.title}
-      >
-        <span>
-          {index % 2 ? 'One more' : 'After'}
-          <em>{index % 2 ? 'detour.' : 'hours.'}</em>
-        </span>
-        <small>Layout sample</small>
-      </Link>
       <div className="meta">
         {article.category}
         {article.demo ? ' / Sample' : ''}

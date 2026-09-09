@@ -38,7 +38,6 @@ export default async function Home() {
           />
           <figcaption>Food. Company. The hours after.</figcaption>
         </figure>
-        <span className="hero-aside">An independent city guide</span>
       </section>
       <section className="section">
         <div className="section-title">
@@ -48,8 +47,8 @@ export default async function Home() {
           <Link href="/blog">All stories ↗</Link>
         </div>
         <div className="stories">
-          {articles.slice(0, 2).map((article, index) => (
-            <ArticleCard key={article.id} article={article} index={index} />
+          {articles.slice(0, 2).map((article) => (
+            <ArticleCard key={article.id} article={article} />
           ))}
         </div>
       </section>

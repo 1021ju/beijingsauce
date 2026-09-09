@@ -2,9 +2,7 @@ import Link from 'next/link';
 export function Header() {
   return (
     <>
-      <div className="prototype">
-        Development preview · All venue and article samples are fictional.
-      </div>
+      <div className="prototype">Preview edition — sample content</div>
       <header className="site-header">
         <Link href="/" className="wordmark" aria-label="BeijingSauce home">
           Beijing<span>Sauce.</span>

@@ -44,3 +44,18 @@ npm run test:smoke
 此目录本身是独立 Git 仓库，可打包交接；Sites 的内部源码存储不等于两人已共享的 GitHub 仓库。
 
 Lint 范围为业务页面、站点组件和内容模块；未使用的生成式 shadcn 组件保留在 components/ui，不纳入当前业务 lint。全工程仍执行 TypeScript 检查。使用这些预置组件时应补充其可访问性检查。
+
+## GitHub 协作
+
+私有仓库：https://github.com/1021ju/beijingsauce
+
+```sh
+git clone https://github.com/1021ju/beijingsauce.git
+cd beijingsauce
+npm ci
+npm run dev
+```
+
+使用自己的 GitHub 账号访问；协作者需要由仓库所有者邀请。主分支保存可运行版本，修改建议走分支与 Pull Request。本地 npm run check 与 npm run test:smoke 执行类型、代码、构建及页面检查。GitHub Actions 模板在 docs/github-actions-check.yml；当前 GitHub 授权没有 workflow 权限，因此尚未启用自动运行。
+
+当前视觉为极简预览版：近白底、黑色文字、统一间距、文本卡片与单张首页图片。以后调整品牌时优先修改公共样式，不改变内容接口。

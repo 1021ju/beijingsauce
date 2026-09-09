@@ -19,8 +19,8 @@ export default async function Blog() {
         <p>Reviews, field notes and things worth sharing.</p>
       </div>
       <div className="stories">
-        {articles.map((article, index) => (
-          <ArticleCard key={article.id} article={article} index={index} />
+        {articles.map((article) => (
+          <ArticleCard key={article.id} article={article} />
         ))}
       </div>
       {!articles.length && (
