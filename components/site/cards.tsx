@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/page-link';
 import type { Article, Bar } from '@/lib/content/types';
 export function ArticleCard({ article }: { article: Article }) {
   return (

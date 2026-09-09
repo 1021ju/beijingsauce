@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/site/page-link';
 import { content } from '@/lib/content/repository';
 import { ArticleCard, BarCard } from '@/components/site/cards';
 export const metadata = { alternates: { canonical: '/' } };

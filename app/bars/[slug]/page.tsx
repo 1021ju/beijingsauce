@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/page-link';
 import { notFound } from 'next/navigation';
 import { content } from '@/lib/content/repository';
 type Props = { params: Promise<{ slug: string }> };
