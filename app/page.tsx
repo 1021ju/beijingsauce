@@ -1,13 +1,71 @@
-export default function Home() {
+import Image from 'next/image';
+import Link from 'next/link';
+import { content } from '@/lib/content/repository';
+import { ArticleCard, BarCard } from '@/components/site/cards';
+export const metadata = { alternates: { canonical: '/' } };
+export default async function Home() {
+  const [articles, bars] = await Promise.all([
+    content.listArticles(),
+    content.listBars(),
+  ]);
   return (
-    <main className="cover">
-      <div className="scene" aria-hidden="true"><img src="/sauce.jpg" alt="" width="1122" height="1402" fetchPriority="high" /></div>
-      <header className="masthead"><span className="location">BEIJING, CHINA</span><span className="edition">AN INDEPENDENT CITY GUIDE</span></header>
-      <section className="composition" aria-labelledby="headline">
-        <h1 id="headline" aria-label="BeijingSauce"><span>Beijing</span><em>Sauce<span className="period">.</span></em></h1>
-        <p className="tagline">Extra sauce,<br/><em>please.</em></p>
+    <main id="main">
+      <section className="hero">
+        <div className="hero-copy">
+          <p className="eyebrow">Beijing, by the curious.</p>
+          <h1>
+            Extra sauce,
+            <br />
+            <em>please.</em>
+          </h1>
+          <p className="hero-note">
+            Places with character.
+            <br />
+            Stories with a point of view.
+          </p>
+          <Link className="text-link" href="/beijing-bars">
+            Find your next evening ↗
+          </Link>
+        </div>
+        <figure className="hero-image">
+          <Image
+            unoptimized
+            src="/sauce.jpg"
+            alt="Dumplings, sauce and a beer on a warmly lit table"
+            width="1122"
+            height="1402"
+            priority
+          />
+          <figcaption>Food. Company. The hours after.</figcaption>
+        </figure>
+        <span className="hero-aside">An independent city guide</span>
       </section>
-      <footer><span className="descriptor">A LITTLE MORE BEIJING.</span><span className="launch"><i aria-hidden="true"/>COMING SOON</span></footer>
+      <section className="section">
+        <div className="section-title">
+          <h2>
+            The journal<span>.</span>
+          </h2>
+          <Link href="/blog">All stories ↗</Link>
+        </div>
+        <div className="stories">
+          {articles.slice(0, 2).map((article, index) => (
+            <ArticleCard key={article.id} article={article} index={index} />
+          ))}
+        </div>
+      </section>
+      <section className="section places">
+        <div className="section-title">
+          <h2>
+            Stay for another<span>.</span>
+          </h2>
+          <Link href="/beijing-bars">Beijing bars ↗</Link>
+        </div>
+        <div className="bar-list">
+          {bars.slice(0, 2).map((bar) => (
+            <BarCard key={bar.id} bar={bar} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

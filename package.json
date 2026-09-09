@@ -9,8 +9,11 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
-    "lint": "oxlint",
-    "format": "oxfmt"
+    "lint": "oxlint app components/site lib/content lib/site.ts",
+    "format": "oxfmt",
+    "typecheck": "tsc --noEmit",
+    "test:smoke": "node tests/smoke.mjs",
+    "check": "npm run typecheck && npm run lint && npm run build"
   },
   "dependencies": {
     "react": "19.2.6",
